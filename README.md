@@ -13,7 +13,7 @@
  ## Steps Taken to Finish Assignment
 
  - Create Simple UI for search functionality
- - Designed Application to have a hierarchical relation from Browser ---> Search -----> to seperate the concerns with functionality.
+ - Designed Application to have a hierarchical relation from Browser ---> Search -----> Results to seperate the concerns with functionality.
  - Create Smart Contract and then communicate with it through the web3.js API.
  - Display JSON Formatted Data onto the Page after client sends request.
  - Find cryptoKitties API to get pictures.
