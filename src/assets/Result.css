@@ -1,5 +1,6 @@
 div {
 margin:8px;
+animation:fade-in 1s linear;
 }
 
 .image{

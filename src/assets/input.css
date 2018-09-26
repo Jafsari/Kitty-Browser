@@ -9,6 +9,7 @@ input[type=text]:focus {
 }
 
 .button {
+    margin:5px;
     background-color: grey; 
     border: none;
     border-radius: 8px;
@@ -22,6 +23,28 @@ input[type=text]:focus {
     -webkit-animation:pop-in 1.5s;
     -moz-animation:pop-in 1.5s;
     -ms-animation:pop-in 1.5s; 
+  }
+
+  .random{
+    margin:5px;
+    background-color: red; 
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: all .2s ease-in-out;
+    -webkit-animation:pop-in 1.5s;
+    -moz-animation:pop-in 1.5s;
+    -ms-animation:pop-in 1.5s; 
+  }
+  
+  .random:hover { 
+    cursor:pointer;
+    transform: scale(1.1); 
   }
   
   .button:hover { 
