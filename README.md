@@ -98,3 +98,4 @@ Once you have the Smart Contract's ABI, uncomment the lines you need to add the 
 
 For any questions or comments please contact `Dragos Rizescu <dragos.rizescu@consensys.net>` or `Ruben  Torres <ruben.torres@consensys.net>`
 # Kitty-Browser
+# Kitty-Browser
