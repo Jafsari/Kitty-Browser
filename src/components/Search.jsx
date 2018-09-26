@@ -15,6 +15,7 @@ class Search extends Component {
         this.state = {
             Search:"",
             Kitty:"",
+            Image:""
         }
     }
     // 887674
@@ -45,7 +46,8 @@ class Search extends Component {
         }).then(() => {
             axios.get(`https://api.cryptokitties.co/kitties/${this.state.Search}`).then((item) => {
             console.log(item)
-            this.setState({Search:item})
+            this.setState({Image:item})
+            this.setState({Search:""})
             })
         }).catch((err) => {
           console.log('nooo')
@@ -74,9 +76,10 @@ class Search extends Component {
             console.log(result);
             this.setState({Kitty:result})
         }).then(() => {
-            axios.get(`https://api.cryptokitties.co/kitties/${this.random(9999)}`).then((item) => {
+            axios.get(`https://api.cryptokitties.co/kitties/${this.random(999999)}`).then((item) => {
             console.log(item)
-            this.setState({Search:item})
+            this.setState({Image:item})
+            this.setState({Search:""})
             })
         }).catch((err) => {
           console.log('nooo')
@@ -96,11 +99,11 @@ class Search extends Component {
         <div>
          <div><strong>Kitty ID:</strong></div>
          <form>
-        <input onChange={this.handleChange} className='input' type="text" name="Search" />
+        <input onChange={this.handleChange} className='input' type="text" name="Search" value={this.state.Search} />
         <button className='button' onClick={this.handleRequest}> FIND KITTY </button>
         <button className='random' onClick={this.handleRandom}> RANDOM </button>
         </form>
-        <Results information = {this.state.Kitty} picture={this.state.Search}/>
+        <Results information = {this.state.Kitty} picture={this.state.Image}/>
         </div>
     )
 }
