@@ -1,0 +1,30 @@
+.input{
+    border-style: solid;
+    margin:5px;
+    height:20px;
+}
+
+input[type=text]:focus {
+    border: 3px solid black;
+}
+
+.button {
+    background-color: grey; 
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: all .2s ease-in-out;
+    -webkit-animation:pop-in 1.5s;
+    -moz-animation:pop-in 1.5s;
+    -ms-animation:pop-in 1.5s; 
+  }
+  
+  .button:hover { 
+    cursor:pointer;
+    transform: scale(1.1); 
+  }
