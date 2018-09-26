@@ -5,8 +5,6 @@ import Results from './Results.jsx';
 import Web3 from 'web3';
 import KittyCoreABI from '../contracts/KittyCoreABI.json';
 import { CONTRACT_NAME, CONTRACT_ADDRESS } from '../config';
-import Moment from 'react-moment';
-import 'moment-timezone';
 import axios from 'axios';
 
 class Search extends Component {
@@ -18,22 +16,17 @@ class Search extends Component {
             Image:""
         }
     }
-    // 887674
-
     random = (max) => {
         return Math.floor(Math.random() * Math.floor(max));
     }
     handleRequest = (e) => {
         e.preventDefault();
         const web3 = new Web3(window.web3.currentProvider);
-    
         // Initialize the contract instance
-    
         const kittyContract = new web3.eth.Contract(
           KittyCoreABI, // import the contracts's ABI and use it here
           CONTRACT_ADDRESS,
         );
-    
         // Add the contract to the drizzle store
         this.context.drizzle.addContract({
           contractName: CONTRACT_NAME,

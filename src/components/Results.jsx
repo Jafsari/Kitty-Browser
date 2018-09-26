@@ -28,7 +28,7 @@ class Results extends Component {
                     </div>
                 </div>
                 <div className='image'>
-                    <img src = {this.props.picture.data.image_url} />
+                    <img src = {this.props.picture.data.image_url} alt='Kitty' />
                 </div>
             </div>
             )
