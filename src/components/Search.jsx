@@ -41,49 +41,39 @@ class Search extends Component {
         });
         // console.log(kittyContract.methods.getKitty(887674))
         kittyContract.methods.getKitty(this.state.Search).call({from: CONTRACT_ADDRESS}).then((result) => {
-            console.log(result);
             this.setState({Kitty:result})
         }).then(() => {
             axios.get(`https://api.cryptokitties.co/kitties/${this.state.Search}`).then((item) => {
-            console.log(item)
             this.setState({Image:item})
             this.setState({Search:""})
             })
         }).catch((err) => {
-          console.log('nooo')
           console.log(err)
+          alert('There was a problem with your request')
         });
     
         }
     handleRandom = (e) => {
         e.preventDefault();
-        const web3 = new Web3(window.web3.currentProvider);
-    
-        // Initialize the contract instance
-    
+        const web3 = new Web3(window.web3.currentProvider); 
         const kittyContract = new web3.eth.Contract(
-          KittyCoreABI, // import the contracts's ABI and use it here
+          KittyCoreABI, 
           CONTRACT_ADDRESS,
         );
-    
-        // Add the contract to the drizzle store
         this.context.drizzle.addContract({
           contractName: CONTRACT_NAME,
           web3Contract: kittyContract,
         });
-        // console.log(kittyContract.methods.getKitty(887674))
-        kittyContract.methods.getKitty(this.state.Search).call({from: CONTRACT_ADDRESS}).then((result) => {
-            console.log(result);
+        kittyContract.methods.getKitty(this.random(999999)).call({from: CONTRACT_ADDRESS}).then((result) => {
             this.setState({Kitty:result})
         }).then(() => {
             axios.get(`https://api.cryptokitties.co/kitties/${this.random(999999)}`).then((item) => {
-            console.log(item)
             this.setState({Image:item})
             this.setState({Search:""})
             })
         }).catch((err) => {
-          console.log('nooo')
           console.log(err)
+          alert('There was a problem with your request')
         });
     }
     handleChange = (e) => {
@@ -92,9 +82,7 @@ class Search extends Component {
              [e.target.name]: e.target.value
            });
      }
-
     render(){
-        console.log(this.state.Search)
     return(
         <div>
          <div><strong>Kitty ID:</strong></div>
@@ -108,7 +96,6 @@ class Search extends Component {
     )
 }
 }
-
 Search.contextTypes = {
     drizzle: object,
   };

@@ -6,7 +6,6 @@ import 'moment-timezone';
 
 class Results extends Component {
     renderPicture = () =>{
-        console.log(this.props.picture)
         if (this.props.picture.data){
             return (
                 <div>
@@ -41,7 +40,6 @@ class Results extends Component {
         }
     }
     render(){
-        {console.log(this.props.picture.data)}
     return(
     <div>
         {this.renderPicture()}

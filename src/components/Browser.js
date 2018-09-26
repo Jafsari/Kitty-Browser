@@ -20,14 +20,10 @@ class Browser extends Component {
         Kitty Browser
         </h1>
         <Search info ={this.state}/>
-        {/* Input to type in the kitty ID here */}
-
-        {/* Display Kitty info here */}
       </div>
     );
   }
 }
-
 Browser.contextTypes = {
   drizzle: object,
 };
