@@ -1,25 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { object } from 'prop-types';
 import  Search  from './Search.jsx';
 import '../assets/Browser.css';
 
-class Browser extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-        Kitty:""
-    }
-  } 
-  render() {
-    return (
+const Browser = () => {
+  return (
       <div className="browser">
         <h1>
         Kitty Browser
         </h1>
-        <Search info ={this.state}/>
+        <Search />
       </div>
     );
-  }
 }
 Browser.contextTypes = {
   drizzle: object,
